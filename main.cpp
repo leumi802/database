@@ -12,6 +12,8 @@ Entry *create(Type type, std::string key, void *value) {
 
 void init(Database &database) {
     // db 멤버 초기화
+    database.size = 0;
+    Database* dp = new Database[database.size];
 }
 
 void add(Database &database, Entry *entry) {
@@ -21,12 +23,12 @@ void add(Database &database, Entry *entry) {
 
 Entry *get(Database &database, std::string &key) {
     Entry *entry;
-    // db entry.key = key 인 것에 접근, 출력
+    // db.entry.key == key 인 것에 접근, 출력
     return entry;
 }
 
 void remove(Database &database, std::string &key) {
-    // db entry.key = key 인 것에 접근, 삭제
+    // db.entry.key == key 인 것에 접근, 삭제
     // index 땡기기
 }
 
@@ -47,6 +49,11 @@ int main() {
         std::cin >> command;
         if (command == "list") {
             // db 출력
+            for (int i = 0; i < db.size; i++) {
+                std::cout << "i번째 키 출력";
+                std::cout << ": ";
+                std::cout << "i번째 value 출력" << std::endl;
+            }
         } else if (command == "add") {
             // db entry 추가
             std::cout << "key: ";

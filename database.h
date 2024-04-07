@@ -19,9 +19,7 @@ struct Entry {
 
 struct Database {
   int size;
-  // int index;
-  Entry entry;
-  Array array;
+  Entry *entry;
   // 해당 부분만 수정하여 사용한다.
   // 다른 부분은 수정하면 안됨.
 };
